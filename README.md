@@ -1,6 +1,9 @@
 # vue
 
+​			这个项目是我们仿照卖座网的效果实现的一个vue学习阶段练习。
+
 ## Project setup
+
 ```
 npm install
 ```
