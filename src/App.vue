@@ -1,32 +1,43 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+	<div id="app">
+		<!--<van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
+			<van-swipe-item>1</van-swipe-item>
+			<van-swipe-item>2</van-swipe-item>
+			<van-swipe-item>3</van-swipe-item>
+			<van-swipe-item>4</van-swipe-item>
+		</van-swipe>-->
+		<Footer/>
+		<router-view/>
+	</div>
 </template>
-
+<script>
+//导入底部导航组件
+import Footer from "@/components/Navigation/Footer"
+//	import Vue from 'vue';
+//	import { Swipe, SwipeItem } from 'vant';
+//
+//	Vue.use(Swipe);
+//	Vue.use(SwipeItem);
+	//	import uri from '@/config/uri'
+	export default {
+		//		 created(){
+		//			this.$http.get(uri.getCity);
+		//		}
+		//     async created() {
+		//         let ret = await this.$http.get(uri.getCity);
+		//         console.log(ret);
+		//     },
+		components:{
+			Footer
+		}
+	};
+</script>
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+	.my-swipe .van-swipe-item {
+		color: #fff;
+		font-size: 20px;
+		line-height: 150px;
+		text-align: center;
+		background-color: #39a9ed;
+	}
 </style>
