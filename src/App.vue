@@ -6,7 +6,7 @@
 			<van-swipe-item>3</van-swipe-item>
 			<van-swipe-item>4</van-swipe-item>
 		</van-swipe>-->
-		<Footer/>
+		<Footer v-show= 'isShowFooter'/>
 		<router-view/>
 	</div>
 </template>
@@ -27,6 +27,19 @@ import Footer from "@/components/Navigation/Footer"
 		//         let ret = await this.$http.get(uri.getCity);
 		//         console.log(ret);
 		//     },
+		data(){
+			return{
+				//默认显示底部导航
+				isShowFooter:true
+			}
+		},
+		created(){
+			//接收其他组件传递来的讯息，控制底部导航是否显示
+			this.$eventBus.$on('hide_footer',(val)=>{
+				console.log(val);
+				this.isShowFooter = val;
+			})
+		},
 		components:{
 			Footer
 		}
