@@ -10,7 +10,8 @@ import cinemaRouter from './routes/cinemas'
 import centerRouter from './routes/center'
 
 const routes = [
-filmRouter,
+//展开电影模块的其他所以的路由
+...filmRouter,
 cinemaRouter,
 centerRouter,
 {
